@@ -1,0 +1,93 @@
+body {
+    overflow-y: hidden;
+}
+
+.homeBody {
+    height: 90vh;
+    width: 100vw;
+    margin-top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.logoDiv {
+    position: relative;
+    margin-top: 1.5%;
+    display: flex;
+    width: 90vw;
+    margin-inline: auto;
+    justify-content: space-evenly;
+}
+
+.logo {
+    width: 30vw;
+    filter: drop-shadow(5px 0 5px black);
+}
+
+.graphs {
+    position: relative;
+    flex-grow: 1;
+    margin-bottom: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 2rem;
+    justify-items: center;
+    box-sizing: border-box;
+}
+
+.graph {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    max-width: 650px;
+    max-height: 350px;
+    align-self: center;
+    padding: 3%;
+    font-size: large;
+    color: black;
+    background-color: #DDDDDD;
+    border-radius: 5px;
+}
+
+.tableGraph {
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid black;
+    text-align: center;
+    table-layout: fixed;
+    border-radius: 0;
+    box-shadow: 1px 1.5px 10px black;
+}
+
+th, td {
+    border: 1.5px solid black;
+    gap: 0;
+}
+
+.tableHeaderItem {
+    height: 50px;
+}
+
+.histogram {
+    width: 100%;
+    height: 100%;
+}
+
+.g {
+    background-color: yellowgreen;
+}
+
+.y {
+    background-color: yellow;
+}
+
+.r{
+    background-color: orangered;
+}
+
+.dg {
+    font-size: x-large;
+    background-color: #999999;
+}

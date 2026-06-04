@@ -1,0 +1,303 @@
+/* ─── Page shell ───────────────────────────────────────────────── */
+.dash {
+  min-height: calc(100vh - 64px);
+  background: var(--bg);
+  padding: 1.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ─── Top bar ──────────────────────────────────────────────────── */
+.dash-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dash-logo {
+  height: 50px;
+  filter: drop-shadow(0 0 12px rgba(190, 41, 33, 0.4));
+}
+
+.dash-status {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.8rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot.on {
+  background: var(--green);
+  box-shadow: 0 0 6px var(--green);
+  animation: blink 2s ease-in-out infinite;
+}
+
+.status-dot.off {
+  background: var(--muted);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.status-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--dim);
+}
+
+.status-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--border);
+  flex-shrink: 0;
+  margin: 0 0.15rem;
+}
+
+.status-field {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+}
+
+.status-field-key {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.status-time {
+  font-size: 0.68rem;
+  color: var(--muted);
+  font-family: 'Courier New', monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Two-column grid ──────────────────────────────────────────── */
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+/* ─── Card ─────────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.card-title {
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+
+.card-sub {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ─── Power table ──────────────────────────────────────────────── */
+.power-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.power-table th {
+  text-align: left;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 0.5rem 0.5rem;
+}
+
+.power-table th:not(:first-child) {
+  text-align: right;
+}
+
+.power-table tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+.td-label {
+  padding: 0.65rem 0.5rem;
+  color: var(--dim);
+  font-family: 'Courier New', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.05em;
+}
+
+.td-val {
+  text-align: right;
+  padding: 0.65rem 0.5rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: var(--blue);
+  font-variant-numeric: tabular-nums;
+}
+
+.td-unit {
+  font-size: 0.68rem;
+  color: var(--muted);
+}
+
+/* ─── AI panel ─────────────────────────────────────────────────── */
+.ai-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 0.25rem;
+}
+
+.ai-prediction {
+  font-size: 2.8rem;
+  font-weight: 800;
+  font-family: 'Courier New', monospace;
+  color: var(--blue);
+  text-align: center;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 0.5rem 0;
+}
+
+.ai-waiting {
+  min-height: 130px;
+}
+
+.ai-conf {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.conf-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.conf-key {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.conf-pct {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  color: var(--text);
+}
+
+.conf-track {
+  width: 100%;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.conf-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.conf-fill.high { background: var(--green); }
+.conf-fill.mid  { background: var(--yellow); }
+.conf-fill.low  { background: var(--crimson); }
+
+/* ─── Waiting placeholder ──────────────────────────────────────── */
+.waiting {
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 2.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spec-waiting {
+  height: 300px;
+  padding: 0;
+}
+
+/* ─── ADS dual-IMU grid ────────────────────────────────────────── */
+.ads-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.imu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.imu-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.ads-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ads-table tbody tr {
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 720px) {
+  .ads-grid { grid-template-columns: 1fr; }
+}
+
+/* ─── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .dash        { padding: 1rem 1rem 2rem; }
+  .dash-grid   { grid-template-columns: 1fr; }
+  .ai-prediction { font-size: 2rem; }
+}

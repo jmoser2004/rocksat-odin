@@ -1,0 +1,120 @@
+/* header.css — token-driven, elevated navigation bar */
+
+.headerWrapper {
+    margin: 0;
+    padding: 0 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+
+    width: 100vw;
+    height: 7vh;
+    min-height: 80px;
+
+    background-color: var(--capitol-red);
+    color: var(--text-inverse);
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0);
+    position: relative;
+    z-index: 100;
+}
+
+/* Logo / character image */
+.character {
+    position: relative;
+
+    height: 6vh;
+    min-height: 60px;
+    width: auto;
+
+    flex-shrink: 0;
+}
+
+/* Navigation container */
+.navigator {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-left: auto;
+}
+
+/* Nav links */
+.navbarLink {
+    color: var(--text-inverse);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    padding: 0.4rem 0.9rem;
+    border-radius: 0.5rem;
+    border: none;
+    /*outline: 2px solid rgba(255, 255, 255, 0.68);
+    outline-offset: -2px;*/
+    box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.68);
+
+    /*background-color: rgba(255, 255, 255, 0.18);*/
+
+    transition:
+        background-color var(--transition-fast),
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+.navbarLink:hover {
+    background-color: rgba(0, 0, 0, 0.18);
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.68),
+        0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+
+.navbarLink:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Active page indicator */
+.underline {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 3px;
+}
+
+/* Right-aligned clock / status */
+.time {
+    color: var(--text-inverse);
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+    .headerWrapper {
+        padding: 0 1rem;
+        gap: 1.25rem;
+    }
+
+    .navigator {
+        margin-left: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .navbarLink {
+        font-size: 1.3rem;
+    }
+
+    .time {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .navigator {
+        display: none;
+    }
+}

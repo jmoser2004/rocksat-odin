@@ -1,0 +1,144 @@
+/* home.css — card-based dashboard layout aligned with design tokens */
+
+body {
+    overflow-y: hidden;
+}
+
+/* Main viewport container */
+.homeBody {
+    height: 90vh;
+    width: 100vw;
+    margin-top: 0;
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* Logo / header area */
+.logoDiv {
+    width: 100%;
+    max-width: 1100px;
+    margin: 1.5rem auto 0;
+    padding: 0 2rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: clamp(220px, 30vw, 420px);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+}
+
+/* Graph grid container */
+.graphs {
+    flex-grow: 1;
+
+    width: 100%;
+    max-width: 1400px;
+    margin: 1rem auto 2rem;
+    padding: 1.5rem 2rem;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+
+    box-sizing: border-box;
+}
+
+/* Individual graph card */
+.graph {
+    width: 100%;
+    height: 100%;
+
+    padding: 1.5rem;
+
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1rem;
+}
+
+/* Tables inside graph cards */
+.tableGraph {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-md);
+}
+
+th,
+td {
+    border: 1.5px solid var(--border-color);
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.tableHeaderItem {
+    height: 48px;
+    font-weight: 700;
+    background-color: var(--bg-tertiary);
+}
+
+/* Histogram / chart container */
+.histogram {
+    width: 100%;
+    height: 100%;
+}
+
+/* Status colors (kept semantic, softened visually) */
+.g {
+    background-color: #9acd32;
+}
+
+.y {
+    background-color: #f4d03f;
+}
+
+.r {
+    background-color: #e74c3c;
+}
+
+.dg {
+    background-color: #b0b0b0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Responsive layout */
+@media (max-width: 1100px) {
+    .graphs {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .graphs {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .logoDiv {
+        padding: 0 1rem;
+    }
+
+    .graph {
+        padding: 1.25rem;
+    }
+}

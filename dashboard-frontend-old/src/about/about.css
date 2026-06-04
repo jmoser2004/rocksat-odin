@@ -1,0 +1,58 @@
+.aboutBody {
+    height: 90vh;
+    width: 100vw;
+    margin-top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+
+.aboutTitleDiv {
+    position: relative;
+    margin-top: 1.5%;
+    display: flex;
+    width: 90vw;
+    margin-inline: auto;
+    justify-content: space-evenly;
+}
+
+.aboutTitle {
+    width: 50vw;
+    filter: drop-shadow(5px 0 5px black);
+}
+
+.teamPhotoDiv {
+    width: 40vw;
+    margin-inline: auto;
+    margin-top: 3vh;
+}
+
+.teamPhoto {
+    width: 40vw;
+    margin-inline: auto;
+    box-shadow: 0 0 10px black;
+}
+
+.teamPhotoTitle {
+    font-size: medium;
+    color: darkslategray;
+}
+
+.aboutParaWrapper {
+    width: 50vw;
+    margin-inline: auto;
+    margin-bottom: 3vh;
+}
+
+.aboutPara {
+    color: black;
+    font-size: x-large;
+    text-indent: 2rem;
+}
+
+.aboutHeader {
+    color: black;
+    font-size: xx-large;
+    margin-inline: auto;
+}

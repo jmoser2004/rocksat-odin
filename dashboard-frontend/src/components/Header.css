@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 64px;
+  background: var(--red);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
+  padding: 0 1.75rem;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.header-char {
+  height: 46px;
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+
+.header-nav {
+  display: flex;
+  gap: 2.25rem;
+}
+
+.header-link {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.15s ease;
+}
+
+.header-link:hover,
+.header-link.active {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+}

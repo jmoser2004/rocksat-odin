@@ -1,0 +1,61 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette */
+    --primary-color: #dc2626;
+    --primary-hover: #b91c1c;
+    --primary-light: #fee2e2;
+    --secondary-color: #6b7280;
+    --secondary-hover: #4b5563;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+    --info-color: #06b6d4;
+
+    /* Status Colors */
+    --status-draft: #9ca3af;
+    --status-review: #dc2626;
+    --status-approved: #10b981;
+    --status-implemented: #8b5cf6;
+    --status-verified: #059669;
+
+    /* Risk Colors */
+    --risk-critical: #dc2626;
+    --risk-high: #f59e0b;
+    --risk-medium: #eab308;
+    --risk-low: #10b981;
+
+    /* UI Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
+    --bg-dark: #111827;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --border-color: #e5e7eb;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Page Specific Styles */
+.about-container {
+    padding: 2rem;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}

@@ -1,0 +1,134 @@
+/* about.css (restyled to match styles.css tokens + card-based layout) */
+.aboutBody {
+    height: 90vh;
+    width: 100vw;
+    margin-top: 0;
+    position: fixed;
+
+    display: flex;
+    flex-direction: column;
+
+    /* Match app surface + scrolling patterns */
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+/*
+
+.aboutTitleDiv {
+    width: 100%;
+    max-width: 1100px;
+    margin: 1.5rem auto 0;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.aboutTitle {
+    width: clamp(220px, 40vw, 560px);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.20));
+}
+
+/* Card container for the photo + caption */
+
+.aboutTitleDiv {
+    position: relative;
+    margin-top: 1.5%;
+    display: flex;
+    width: 90vw;
+    margin-inline: auto;
+    justify-content: space-evenly;
+}
+
+.aboutTitle {
+    width: 50vw;
+    filter: drop-shadow(5px 2px 2px black);
+}
+.teamPhotoDiv {
+    width: 100%;
+    max-width: 1100px;
+    margin: 1.5rem auto 0;
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.teamPhoto {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto;
+
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-md);
+
+    /* avoids inline-image gaps / baseline quirks */
+    display: block;
+}
+
+.teamPhotoTitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* Text content as a readable card */
+.aboutParaWrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: .5rem auto 2rem;
+    padding: 1.5rem 2rem;
+
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Headline matches "view-header h2" sizing vibe */
+.aboutHeader {
+    color: var(--text-primary);
+    font-size: clamp(1.6rem, 2.2vw, 2.25rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+/* Body copy matches app typography */
+.aboutPara {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-indent: 1.5rem;
+}
+
+/* Responsive adjustments consistent with styles.css breakpoints */
+@media (max-width: 768px) {
+    .aboutTitleDiv,
+    .teamPhotoDiv {
+        padding: 0 1rem;
+    }
+
+    .aboutTitleDiv {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .aboutParaWrapper {
+        padding: 1.25rem 1rem;
+        border-radius: 0.5rem;
+    }
+
+    .aboutPara {
+        font-size: 1rem;
+        text-indent: 1.25rem;
+    }
+}
