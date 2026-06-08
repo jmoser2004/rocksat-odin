@@ -1,0 +1,14 @@
+# Deploy artifacts
+*.pem
+.rocksat-ip
+.env
+
+# Frontend
+node_modules/
+dashboard-frontend/node_modules/
+dashboard-frontend-old/node_modules/
+dashboard-frontend/dist/
+
+# Backend
+dashboard-backend/dashboard-backend/target/
+dashboard-backend-old/target/
