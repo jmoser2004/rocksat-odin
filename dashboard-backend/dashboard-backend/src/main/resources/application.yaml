@@ -2,9 +2,9 @@ spring:
   application:
     name: dashboard-backend
   datasource:
-    url: jdbc:postgresql://localhost:5432/message_db
-    username: rocksat
-    password: odin
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/message_db}
+    username: ${SPRING_DATASOURCE_USERNAME:rocksat}
+    password: ${SPRING_DATASOURCE_PASSWORD:odin}
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:

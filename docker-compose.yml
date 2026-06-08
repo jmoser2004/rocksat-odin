@@ -1,6 +1,35 @@
 version: "3.9"
 
 services:
+  caddy:
+    image: caddy:2
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./dashboard-frontend/dist:/srv/frontend:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./dashboard-backend/dashboard-backend
+    container_name: backend
+    restart: unless-stopped
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/message_db
+      SPRING_DATASOURCE_USERNAME: rocksat
+      SPRING_DATASOURCE_PASSWORD: odin
+      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
+    depends_on:
+      - postgres
+
   postgres:
     image: postgres:16
     container_name: postgres
@@ -9,10 +38,10 @@ services:
       POSTGRES_DB: message_db
       POSTGRES_USER: rocksat
       POSTGRES_PASSWORD: odin
-    ports:
-      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
 volumes:
   postgres_data:
+  caddy_data:
+  caddy_config:

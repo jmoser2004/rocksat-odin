@@ -1,0 +1,18 @@
+rocksatodin.com {
+    # STOMP WebSocket endpoint
+    handle /ws {
+        reverse_proxy backend:8080
+    }
+
+    # REST API
+    handle /api/* {
+        reverse_proxy backend:8080
+    }
+
+    # React SPA — serve dist, fall back to index.html for client-side routing
+    handle {
+        root * /srv/frontend
+        try_files {path} /index.html
+        file_server
+    }
+}

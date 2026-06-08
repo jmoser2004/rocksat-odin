@@ -6,8 +6,8 @@ import {
 import ProjectODINLogo from '../assets/ProjectODINLogo.png'
 import './Home.css'
 
-const WS_URL  = 'ws://localhost:8080/ws'
-const API_BASE = 'http://localhost:8080/api/messages'
+const WS_URL  = 'wss://rocksatodin.com/ws'
+const API_BASE = 'https://rocksatodin.com/api/messages'
 
 // ── Parsers ────────────────────────────────────────────────────────────────
 
